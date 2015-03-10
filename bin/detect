@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'buildpacks'
+
+build_dir = ARGV[0]
+
+if buildpack = Buildpacks.detect?(build_dir)
+  puts "buildpack detected: #{buildpack.name}"
+  exit 0
+else
+  exit 1
+end

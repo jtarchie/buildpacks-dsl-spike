@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+buildpack = Buildpacks.detect?(build_dir)
+puts "Compiling buildpack #{buildpack.name}"
+buildpack.compile!
